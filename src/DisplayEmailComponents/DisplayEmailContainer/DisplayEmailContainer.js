@@ -1,23 +1,43 @@
 import './DisplayEmailContainer.css'
-import displayEmailCard  from "../DisplayEmailCard/DisplayEmailCard";
+import EmailCard  from "../DisplayEmailCard/EmailCard";
 
-const emails = displayEmailContainer.map((displayEmailContainer) =>
-    {
-        const emailItem = <DisplayEmailCard emailCard={displayEmailCard}/>
-            return (
-                <ul className="displayEmailContainer .col-3 ">
-                    {emailItem}
-                </ul>
-            )
-    }
-)
+// const DisplayEmailContainer = EmailCard.map((DisplayEmailCard) =>
+//     {
+//         const emailItem = <EmailCard emailCard={DisplayEmailCard}/>
+//             return (
+//                 <ul className="DisplayEmailContainer .col-3 ">
+//                     {emailItem}
+//                 </ul>
+//             )
+//     }
+// )
+//
+// export default DisplayEmailContainer
+
+
+
+const DisplayEmailContainer = (props) => {
+        const emailItems = props.emailItems;
+        const emails = emailItems.map((emailItem) =>
+            <li>{emailItem}</li>
+        )
+    return (
+        <ul>{emails}</ul>
+    )
+}
 
 export default DisplayEmailContainer
 
-// function displayEmailContainer() {
+
+// function NameList(props) {
+//     const myLists = props.myLists;
+//     const listItems = myLists.map((myList) =>
+//         <li>{myList}</li>
+//     );
 //     return (
-//         <div className="displayEmailContainer .col-3 ">
-//             <DisplayEmailCard emailCard={displayEmailCard} />
+//         <div>
+//             <h2>React Map Example</h2>
+//             <ul>{listItems}</ul>
 //         </div>
-//     )
+//     );
 // }

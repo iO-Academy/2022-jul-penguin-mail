@@ -1,7 +1,7 @@
-import './DisplayEmailCard.css'
+import './DisplayEmailCards.css'
 
 
-function DisplayEmailCard() {
+function EmailCard() {
 
     return (
         <div>
@@ -17,4 +17,4 @@ function DisplayEmailCard() {
     )
 }
 
-export default DisplayEmailCard
+export default EmailCard
