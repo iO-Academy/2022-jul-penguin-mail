@@ -1,16 +1,15 @@
 import './DisplayEmailContainer.css'
 import EmailCard  from "../DisplayEmailCard/EmailCard";
 
-const DisplayEmailContainer = () => {
-    const emailItems = props.emailItems;
-    const emails = emailItems.map((emailItem) =>
-        <EmailCard name={name} date_created={date_created}
-                   subject={subject} body={body} />
+const DisplayEmailContainer = (props) => {
+    const emailItems = props.EmailCard;
+    const emailCardsArray = emailItems.map((emailItem) =>
+        <EmailCard name={emailItem.name} date_created={emailItem.date_created}
+                   subject={emailItem.subject} body={emailItem.body} />
     )
    return (
        <div className="DisplayEmailContainer col-3">
-
-
+           {emailCardsArray}
        </div>
 
    )
