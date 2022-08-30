@@ -16,9 +16,3 @@ const DisplayEmailContainer = (props) => {
 }
 export default DisplayEmailContainer
 
-
-// const exampleName = 'Rayna'
-// const exampleDate = '2022-30-08'
-// const exampleSubject = 'Bills unpaid'
-// const exampleBody = 'Please pay the bills otherwise dire consequences will follol'
-// <EmailCard name={exampleName} date_created={exampleDate} subject={exampleSubject} body={exampleBody} />

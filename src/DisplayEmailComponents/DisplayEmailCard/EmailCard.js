@@ -1,10 +1,6 @@
 import './DisplayEmailCards.css'
 
 const EmailCard = (props) => {
-    // const emailItems = props.emailItems;
-    // const emails = emailItems.map((emailItem) =>
-    //     <ul>{emailItem}</ul>
-    // )
     return (
         <div>
             <div className="displayNameAndDate">
