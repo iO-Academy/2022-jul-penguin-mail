@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <SideBar />
-      <DisplayEmailContainer />
+      <DisplayEmailContainer allEmailSnippets={allEmailSnippets}/>
       <Header />
 
     </div>
