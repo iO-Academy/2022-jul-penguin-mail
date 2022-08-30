@@ -1,5 +1,5 @@
 import './DisplayEmailContainer.css'
-import displayEmailCard  from "../displayEmailCard/DisplayEmailCard";
+import displayEmailCard  from "../DisplayEmailCard/DisplayEmailCard";
 
 const emails = displayEmailContainer.map((displayEmailContainer) =>
     {
