@@ -1,20 +1,18 @@
 import './DisplayEmailCards.css'
 
-
 function EmailCard() {
 
     return (
-        <div>
-            <div className="displayNameAndDate">
-                <h2 className="contactName">Maria Smith</h2>
-                <p className="receivedEmailDate">23/07/2022</p>
-            </div>
-           <div className="displaySubjectAndContent">
-               <p className="emailSubject"></p>
-               <p className="emailContent"></p>
+        <div className={'border d-flex flex-row justify-content-between p-2'}>
+           <div className="emailContainer">
+               <p>Maria Smith</p>
+               <p>EMAILSUBJECT</p>
+               <p>body of the email</p>
            </div>
+            <div className="dateContainer">
+                <p>23/07/2022</p>
+            </div>
         </div>
     )
 }
-
 export default EmailCard

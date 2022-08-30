@@ -3,8 +3,22 @@ import EmailCard  from "../DisplayEmailCard/EmailCard";
 
 const DisplayEmailContainer = () => {
    return (
-       <div className="DisplayEmailContainer col-3">
+       <div className="DisplayEmailContainer col-4 overflow-auto">
            <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+           <EmailCard emailCard={EmailCard} />
+
        </div>
 
    )
