@@ -3,7 +3,7 @@ import displayEmailCard  from "../displayEmailCard/DisplayEmailCard";
 
 function displayEmailContainer() {
     return (
-        <div className="displayEmailContainer" ".col-3">
+        <div className="displayEmailContainer .col-3 ">
             <DisplayEmailCard emailCard={displayEmailCard} />
         </div>
     )

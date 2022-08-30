@@ -1,7 +1,7 @@
 import './DisplayEmailCard.css'
 
 
-function displayEmailCard() {
+function DisplayEmailCard() {
 
     return (
         <div>
