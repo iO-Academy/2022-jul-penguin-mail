@@ -1,5 +1,7 @@
 import './App.css'
 import {useEffect, useState} from 'react'
+import SideBar from './SideBar'
+
 
 function App() {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
@@ -19,8 +21,8 @@ function App() {
 
   return (
     <div className="App">
+      <SideBar />
     </div>
   );
 }
-
 export default App;
