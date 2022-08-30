@@ -1,6 +1,6 @@
 const TestComponent = (props) => {
     return (
-        console.log(props.emailData)
+        console.log(props.allEmailSnippets)
     )
 }
 

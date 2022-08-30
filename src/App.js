@@ -2,7 +2,7 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import TestComponent from './Components/TestComponent';
 
-const GetAllEmailSnippets = () => {
+function App() {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
     const fetchAllEmailData = async () => {
         const EmailData = await fetch('http://localhost:8080/emails')
@@ -17,12 +17,10 @@ const GetAllEmailSnippets = () => {
     useEffect(() => {
         console.log(allEmailSnippets)
     }, [allEmailSnippets])
-} 
 
-function App() {
   return (
     <div className="App">
-      <GetAllEmailSnippets />
+      <TestComponent allEmailSnippets={allEmailSnippets} />
     </div>
   );
 }
