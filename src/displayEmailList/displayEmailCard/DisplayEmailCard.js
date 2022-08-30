@@ -1,5 +1,6 @@
 import './DisplayEmailCard.css'
 
+
 function displayEmailCard() {
 
     return (
