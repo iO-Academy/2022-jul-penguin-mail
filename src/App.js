@@ -1,6 +1,5 @@
-import './App.css';
-import {useEffect, useState} from 'react';
-import TestComponent from './Components/TestComponent';
+import './App.css'
+import {useEffect, useState} from 'react'
 
 function App() {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
@@ -11,7 +10,7 @@ function App() {
     }
 
     useEffect(() => {
-        fetchAllEmailData();
+        fetchAllEmailData()
     }, [])
 
     useEffect(() => {
@@ -20,7 +19,6 @@ function App() {
 
   return (
     <div className="App">
-      <TestComponent allEmailSnippets={allEmailSnippets} />
     </div>
   );
 }
