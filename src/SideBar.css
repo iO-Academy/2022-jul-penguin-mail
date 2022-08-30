@@ -6,3 +6,10 @@
 #pageButtons:focus {
     background-color: #0275d8;
 }
+#inboxButtons {
+    font-size: 0.8rem;
+    padding-top: 15px;
+}
+#inboxButtons:focus {
+    background-color: #0275d8;
+}
