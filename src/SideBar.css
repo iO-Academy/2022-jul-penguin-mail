@@ -1,0 +1,8 @@
+#pageButtons {
+    font-size: 0.8rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#pageButtons:focus {
+    background-color: #0275d8;
+}
