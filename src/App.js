@@ -21,10 +21,10 @@ const App = () => {
     return (
     <div className="App">
         <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
-        <div className="emailCardContainer">
+        <main>
             <SideBar sidebarIsHidden={sidebarIsHidden} allEmailSnippets={allEmailSnippets} />
             <EmailCardList allEmailSnippets={allEmailSnippets} />
-        </div>
+        </main>
     </div>
     )
 }

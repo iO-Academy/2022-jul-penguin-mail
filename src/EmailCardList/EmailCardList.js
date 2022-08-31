@@ -2,9 +2,9 @@ import EmailCard from "./EmailCard/EmailCard";
 
 const EmailCardList = (props) => {
     const formatDateForDisplay = (emailDate) => {
-        const headerDateUnix = Date.parse(emailDate)
-        const headerDate = new Date(headerDateUnix)
-        return headerDate.toLocaleDateString("en-GB")
+        const dateUnixTimestamp = Date.parse(emailDate)
+        const dateObject = new Date(dateUnixTimestamp)
+        return dateObject.toLocaleDateString("en-GB")
     }
     const emailItems = props.allEmailSnippets;
     const emailCardsArray = emailItems.map((emailItem) =>

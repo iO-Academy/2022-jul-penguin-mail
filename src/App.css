@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.emailCardContainer {
+main {
     display: flex;
     flex-direction: row;
     height: 90vh;
