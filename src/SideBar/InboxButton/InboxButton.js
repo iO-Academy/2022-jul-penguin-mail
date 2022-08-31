@@ -9,8 +9,6 @@ const InboxButton = (props) => {
         return unreadCount
     }
     
-    updateUnreadAmount();
-
     return (
         <div>
             <button onClick={clickResetView} id="inboxButtons" type="button" className="btn btn-info w-100 text-left d-flex flex-row justify-content-between">Inbox
