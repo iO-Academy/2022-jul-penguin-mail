@@ -4,6 +4,7 @@ import './DisplayEmailCards.css'
 function EmailCard(props) {
     const handleClick = event => {
         props.setEmailSearchId(event.currentTarget.id)
+        props.setReadingPanelDisplay(true)
     }
   
     return (

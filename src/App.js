@@ -13,6 +13,7 @@ const App = () => {
     const [emailDataById, setEmailDataById] = useState([])
     const [emailRepliesBoolean, setEmailRepliesBoolean] = useState(false)
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
+    const [readingPanelDisplay, setReadingPanelDisplay] = useState(false)
 
     const fetchEmailById = async () => {
         let queryString = 'http://localhost:8080/emails/' + emailSearchId
@@ -50,8 +51,8 @@ const App = () => {
             <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden}/>
             <div className={'d-flex flex-row vh-100'}>
                 <SideBar sidebarIsHidden={sidebarIsHidden}/>
-                <DisplayEmailContainer allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId} fetchEmailById={fetchEmailById}/>
-                <DisplayReadingPanel emailDataById={emailDataById} />
+                <DisplayEmailContainer allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId} fetchEmailById={fetchEmailById} setReadingPanelDisplay={setReadingPanelDisplay}/>
+                <DisplayReadingPanel emailDataById={emailDataById} readingPanelDisplay={readingPanelDisplay}/>
             </div>
         </div>
     )
