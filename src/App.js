@@ -10,16 +10,11 @@ function App() {
         const EmailData = await fetch('http://localhost:8080/emails')
         const jsonEmailData = await EmailData.json()
         setAllEmailSnippets(jsonEmailData.data)
-        console.log(jsonEmailData.data)
     }
 
     useEffect(() => {
         fetchAllEmailData()
     }, [])
-
-    useEffect(() => {
-        console.log(allEmailSnippets)
-    }, [allEmailSnippets])
 
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
     return (
@@ -30,10 +25,8 @@ function App() {
             <SideBar sidebarIsHidden={sidebarIsHidden} />
             <DisplayEmailContainer allEmailSnippets={allEmailSnippets} />
         </div>
-    </div>
-  )
+    )
 }
+
 export default App;
 
-
-// {'d-flex flex-row vh-100'}

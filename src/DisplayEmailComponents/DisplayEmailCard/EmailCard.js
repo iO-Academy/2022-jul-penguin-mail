@@ -13,17 +13,4 @@ function EmailCard(props) {
         </div>
     )
 }
-
 export default EmailCard
-
-// <div>
-// <div className="displayNameAndDate">
-//     <h2 className="contactName"></h2>
-// <p className="receivedEmailDate">{props.date_created}</p>
-// </div>
-// <div className="displaySubjectAndContent">
-//     <p className="emailSubject">{props.subject}</p>
-//     <p className="emailContent">{props.body}</p>
-// </div>
-// </div>
-// )
