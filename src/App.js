@@ -26,7 +26,7 @@ function App() {
     <div className="App">
 
         <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
-        <div className={'d-flex flex-row vh-100'}>
+        <div className="sideBarContainer">
             <SideBar sidebarIsHidden={sidebarIsHidden} />
             <DisplayEmailContainer allEmailSnippets={allEmailSnippets} />
         </div>
@@ -34,3 +34,6 @@ function App() {
   )
 }
 export default App;
+
+
+// {'d-flex flex-row vh-100'}
