@@ -17,6 +17,7 @@ const InputBox = () => {
         setMessage(event.target.value);
     };
 
+
     return (
         <card id="inputBox" class="col-lg-6 border container bg-white p-4 pr-5">
         <form>
@@ -30,6 +31,7 @@ const InputBox = () => {
                     onChange={handleChange}
                     required
                 />
+                {error && <p className={"text-center"} style={{color: 'red'}}>{error}</p>}
             </div>
             <div>
                 <input
