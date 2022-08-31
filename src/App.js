@@ -19,14 +19,16 @@ function App() {
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
     return (
     <div className="App">
-
         <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
         <div className="sideBarContainer">
             <SideBar sidebarIsHidden={sidebarIsHidden} />
             <DisplayEmailContainer allEmailSnippets={allEmailSnippets} />
         </div>
+    </div>
     )
 }
 
 export default App;
 
+
+// {'d-flex flex-row vh-100'}
