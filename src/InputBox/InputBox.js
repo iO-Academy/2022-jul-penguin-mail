@@ -2,7 +2,7 @@ import "./InputBox.css"
 
 const InputBox = () => {
     return (
-        <card id="inputBox" className="col-lg-6 border container bg-white p-4 pr-5">
+        <card id="inputBox" className="col-lg-6 col-xs-12 border container bg-white p-4 pr-5">
         <form>
             <div>
                 <input
