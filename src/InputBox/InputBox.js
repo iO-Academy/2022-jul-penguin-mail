@@ -2,7 +2,7 @@ import "./InputBox.css"
 
 const InputBox = () => {
     return (
-        <card id="inputBox" class="col-lg-6 border container bg-white p-4 pr-5">
+        <card id="inputBox" className="col-lg-6 border container bg-white p-4 pr-5">
         <form>
             <div>
                 <input
@@ -10,7 +10,7 @@ const InputBox = () => {
                     type="email"
                     placeholder="To"
                     name="To"
-                    class="col-lg-12 m-4 border"
+                    className="col-lg-12 m-4 border"
                     required
                 />
             </div>
@@ -20,7 +20,7 @@ const InputBox = () => {
                     type="text"
                     placeholder="Subject"
                     name="Subject"
-                    class="col-lg-12 m-4 border"
+                    className="col-lg-12 m-4 border"
                     required
                 />
             </div>
@@ -29,15 +29,15 @@ const InputBox = () => {
             id="formBox"
             placeholder="Your message"
             name="message"
-            class="col-lg-12 m-4 border"
+            className="col-lg-12 m-4 border"
             required
         />
             </div>
-            <div id="formButton" class="col-lg-12">
+            <div id="formButton" className="col-lg-12">
                 <button type="submit" className="btn btn-success float-right ml-1">
                     Send
                 </button>
-                <button type="submit" class="btn btn-secondary float-right">
+                <button type="submit" className="btn btn-secondary float-right">
                     Cancel
                 </button>
             </div>
