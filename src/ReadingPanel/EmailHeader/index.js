@@ -4,8 +4,6 @@ const EmailHeader = (props) => {
     const headerDate = new Date(headerDateUnix)
     const headerDateHuman = headerDate.toLocaleDateString("en-GB")
 
-
-
     return (
         <div className="emailHeader d-flex row justify-content-between font-weight-bold pt-2">
             <div className="header col-8 d-flex flex-column">
