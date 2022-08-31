@@ -1,15 +1,19 @@
+
 import './App.css';
 import DisplayEmailContainer from "./DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
 import {useEffect, useState} from "react"
 
+
 function App() {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
     const fetchAllEmailData = async () => {
         const EmailData = await fetch('http://localhost:8080/emails')
         const jsonEmailData = await EmailData.json()
+
         setAllEmailSnippets(jsonEmailData.data)
+
     }
 
     useEffect(() => {
@@ -27,5 +31,4 @@ function App() {
     </div>
     )
 }
-
 export default App;
