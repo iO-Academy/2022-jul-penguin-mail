@@ -1,6 +1,6 @@
 
 import './App.css';
-import DisplayEmailContainer from "./DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer";
+import EmailCardList from "./EmailCardList/EmailCardList.js";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
 import {useEffect, useState} from "react"
@@ -22,8 +22,8 @@ const App = () => {
     <div className="App">
         <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
         <div className="emailCardContainer">
-            <SideBar sidebarIsHidden={sidebarIsHidden} />
-            <DisplayEmailContainer allEmailSnippets={allEmailSnippets} />
+            <SideBar sidebarIsHidden={sidebarIsHidden} allEmailSnippets={allEmailSnippets} />
+            <EmailCardList allEmailSnippets={allEmailSnippets} />
         </div>
     </div>
     )

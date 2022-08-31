@@ -1,6 +1,6 @@
 import Title from './Title/Title.js'
 import UserInfo from './UserInfo/UserInfo.js'
-import './style.css'
+import './Header.css'
 import MenuButton from "./MenuButton/MenuButton";
 
 const Header = (props) => {

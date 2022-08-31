@@ -1,6 +1,6 @@
-import EmailCard from "../DisplayEmailCard/EmailCard";
+import EmailCard from "./EmailCard/EmailCard";
 
-const DisplayEmailContainer = (props) => {
+const EmailCardList = (props) => {
     const formatDateForDisplay = (emailDate) => {
         const headerDateUnix = Date.parse(emailDate)
         const headerDate = new Date(headerDateUnix)
@@ -12,11 +12,11 @@ const DisplayEmailContainer = (props) => {
                    subject={emailItem.subject} body={emailItem.body} read={emailItem.read}/>
     )
     return (
-        <div className="col-sm-12 vh-100% col-md-4 overflow-auto">
+        <div className="col-sm-12 col-md-4 overflow-auto px-0">
             {emailCardsArray}
         </div>
     )
 }
-export default DisplayEmailContainer
+export default EmailCardList
 
 
