@@ -3,7 +3,6 @@ import UserInfo from './UserInfo/UserInfo.js'
 import './style.css'
 import MenuButton from "./MenuButton/MenuButton";
 
-
 const Header = (props) => {
     return (
         <div className={'headerContainer mw-100 d-flex flex-row justify-content-between'}>
