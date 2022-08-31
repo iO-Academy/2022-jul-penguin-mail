@@ -8,7 +8,7 @@ function App() {
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
     return (
     <div className="App">
-        <Header setSidebarIsHidden={setSidebarIsHidden} />
+        <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
         <div className={'d-flex flex-row vh-100'}>
             <SideBar sidebarIsHidden={sidebarIsHidden} />
             <DisplayEmailContainer />

@@ -1,6 +1,9 @@
-const MenuButton = () => {
+const MenuButton = (props) => {
+    const toggleMenu = () => {
+        props.sidebarIsHidden === false ? props.setSidebarIsHidden(true) : props.setSidebarIsHidden(false)
+    }
     return (
-            <button className={'h4 my-auto border d-sm-block d-md-none'}>Menu</button>
+            <button onClick={toggleMenu} className={'h4 my-auto border d-sm-block d-md-none'}>Menu</button>
     )
 }
 export default MenuButton
