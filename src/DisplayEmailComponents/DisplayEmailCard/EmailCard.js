@@ -1,5 +1,4 @@
-function EmailCard(props) {
-
+const EmailCard = (props) => {
     return (
         <div className={(props.read == true ? 'btn btn-light col-md-12' : 'btn btn-secondary col-md-12') + "border d-flex flex-row justify-content-between p-2"}>
             <div className="emailContainer">
