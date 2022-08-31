@@ -10,7 +10,7 @@ function App() {
     const fetchAllEmailData = async () => {
         const EmailData = await fetch('http://localhost:8080/emails')
         const jsonEmailData = await EmailData.json()
-        setAllEmailSnippets(jsonEmailData)
+        setAllEmailSnippets(jsonEmailData.data)
     }
 
     useEffect(() => {
