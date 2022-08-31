@@ -3,7 +3,7 @@ import EmailBody from "../EmailBody";
 
 const DisplayReadingPanel = (props) => {
     return (
-        <div className="DisplayReadingPanel col-7">
+        <div className="DisplayReadingPanel col-8">
             <EmailHeader emailDataById={props.emailDataById}/>
             <EmailBody emailDataById={props.emailDataById}/>
         </div>
