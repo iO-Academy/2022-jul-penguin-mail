@@ -29,6 +29,3 @@ function App() {
 }
 
 export default App;
-
-
-// {'d-flex flex-row vh-100'}
