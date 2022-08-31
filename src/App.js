@@ -1,6 +1,9 @@
-import './App.css'
-import {useEffect, useState} from 'react'
-import SideBar from './SideBar'
+
+import './App.css';
+import DisplayEmailContainer from "./DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer";
+import Header from './Header/Header.js'
+import SideBar from './SideBar/SideBar.js'
+import {useEffect, useState} from "react"
 
 
 function App() {
@@ -8,21 +11,24 @@ function App() {
     const fetchAllEmailData = async () => {
         const EmailData = await fetch('http://localhost:8080/emails')
         const jsonEmailData = await EmailData.json()
-        setAllEmailSnippets(jsonEmailData)
+
+        setAllEmailSnippets(jsonEmailData.data)
+
     }
 
     useEffect(() => {
         fetchAllEmailData()
     }, [])
 
-    useEffect(() => {
-        console.log(allEmailSnippets)
-    }, [allEmailSnippets])
-
-  return (
+    const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
+    return (
     <div className="App">
-      <SideBar />
+        <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
+        <div className="sideBarContainer">
+            <SideBar sidebarIsHidden={sidebarIsHidden} />
+            <DisplayEmailContainer allEmailSnippets={allEmailSnippets} />
+        </div>
     </div>
-  );
+    )
 }
 export default App;
