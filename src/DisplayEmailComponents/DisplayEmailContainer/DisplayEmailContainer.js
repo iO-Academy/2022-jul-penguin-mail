@@ -10,7 +10,7 @@ const DisplayEmailContainer = (props) => {
     }
     const emailItems = props.allEmailSnippets;
     const emailCardsArray = emailItems.map((emailItem) =>
-        <EmailCard name={emailItem.name} date_created={dateConvert(emailItem)}
+        <EmailCard id={emailItem.id} name={emailItem.name} date_created={dateConvert(emailItem)}
                    subject={emailItem.subject} body={emailItem.body}/>
     )
     return (

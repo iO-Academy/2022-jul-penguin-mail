@@ -4,7 +4,7 @@ import './DisplayEmailCards.css'
 function EmailCard(props) {
 
     return (
-        <div className={'btn border d-flex flex-row justify-content-between p-2'}>
+        <div className={'btn border d-flex flex-row justify-content-between p-2'} id={props.id}>
             <div className="emailContainer">
                 <p className={'font-weight-bold h5'}>{props.name}</p>
                 <p>{props.subject}</p>
