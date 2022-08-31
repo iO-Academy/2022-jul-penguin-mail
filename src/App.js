@@ -50,9 +50,9 @@ const App = () => {
         <div className="App">
             <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden}/>
             <div className={'d-flex flex-row vh-100'}>
-                <SideBar sidebarIsHidden={sidebarIsHidden} setReadingPanelDisplay={setReadingPanelDisplay}/>
+                <SideBar allEmailSnippets={allEmailSnippets} sidebarIsHidden={sidebarIsHidden} setReadingPanelDisplay={setReadingPanelDisplay}/>
                 <DisplayEmailContainer allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId} fetchEmailById={fetchEmailById} readingPanelDisplay={readingPanelDisplay} setReadingPanelDisplay={setReadingPanelDisplay}/>
-                <DisplayReadingPanel emailDataById={emailDataById} readingPanelDisplay={readingPanelDisplay}/>
+                <DisplayReadingPanel emailDataById={emailDataById} readingPanelDisplay={readingPanelDisplay} />
             </div>
         </div>
     )
