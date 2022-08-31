@@ -3,7 +3,6 @@ const EmailHeader = (props) => {
     const headerDateUnix = Date.parse(headerData.date_created)
     const headerDate = new Date(headerDateUnix)
     const headerDateHuman = headerDate.toLocaleDateString("en-GB")
-    console.log(headerDateHuman)
 
 
 

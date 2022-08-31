@@ -3,7 +3,7 @@ import './DisplayEmailCards.css'
 
 function EmailCard(props) {
     const handleClick = event => {
-        console.log(event.currentTarget.id)
+        props.setEmailSearchId(event.currentTarget.id)
     }
     return (
         <div className={'btn border d-flex flex-row justify-content-between p-2'} id={props.id}

@@ -27,6 +27,10 @@ function App() {
         fetchEmailById()
     }, [])
 
+    useEffect(()=> {
+        fetchEmailById()
+        },[emailSearchId])
+
     const fetchAllEmailData = async () => {
         const EmailData = await fetch('http://localhost:8080/emails')
         const jsonEmailData = await EmailData.json()
@@ -43,7 +47,7 @@ function App() {
             <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden}/>
             <div className={'d-flex flex-row vh-100'}>
                 <SideBar sidebarIsHidden={sidebarIsHidden}/>
-                <DisplayEmailContainer allEmailSnippets={allEmailSnippets}/>
+                <DisplayEmailContainer allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId} fetchEmailById={fetchEmailById}/>
                 <DisplayReadingPanel emailDataById={emailDataById} />
             </div>
         </div>
