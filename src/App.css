@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
+.emailCardContainer {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+}

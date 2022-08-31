@@ -1,13 +1,14 @@
-import './App.css';
 
-import DisplayEmailContainer from './DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer';
+import './App.css';
+import DisplayEmailContainer from "./DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
 import {useState, useEffect} from "react";
 import DisplayReadingPanel from "./ReadingPanel/DisplayReadingPanel";
 
-function App() {
+const App = () => {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
+
     const [emailSearchId, setEmailSearchId] = useState(98)
     const [emailDataById, setEmailDataById] = useState([])
     const [emailRepliesBoolean, setEmailRepliesBoolean] = useState(false)
@@ -31,15 +32,17 @@ function App() {
         fetchEmailById()
         },[emailSearchId])
 
+
     const fetchAllEmailData = async () => {
-        const EmailData = await fetch('http://localhost:8080/emails')
-        const jsonEmailData = await EmailData.json()
+        const emailData = await fetch('http://localhost:8080/emails')
+        const jsonEmailData = await emailData.json()
         setAllEmailSnippets(jsonEmailData.data)
     }
 
     useEffect(() => {
         fetchAllEmailData()
     }, [])
+
 
 
     return (
@@ -53,5 +56,4 @@ function App() {
         </div>
     )
 }
-
 export default App;

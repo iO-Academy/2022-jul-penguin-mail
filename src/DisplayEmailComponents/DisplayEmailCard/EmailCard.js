@@ -5,12 +5,13 @@ function EmailCard(props) {
     const handleClick = event => {
         props.setEmailSearchId(event.currentTarget.id)
     }
+  
     return (
-        <div className={'btn border d-flex flex-row justify-content-between p-2'} id={props.id}
-            onClick={handleClick}>
-            <div className="emailContainer">
-                <p className={'font-weight-bold h5'}>{props.name}</p>
-                <p>{props.subject}</p>
+        <div className={(props.read == true ? 'btn btn-light col-md-12' : 'btn btn-secondary col-md-12') + "border d-flex flex-row justify-content-between p-2"} id={props.id}
+        onClick={handleClick}>
+           <div className="emailContainer">
+                <p className={'font-weight-bold h5 text-left'}>{props.name}</p>
+                <p className={'text-left'}>{props.subject}</p>
                 <p>{props.body}</p>
             </div>
             <div className="dateContainer">
