@@ -1,14 +1,14 @@
 import EmailCard from "../DisplayEmailCard/EmailCard";
 
 const DisplayEmailContainer = (props) => {
-    const dateConvert = (emailItem) => {
-        const headerDateUnix = Date.parse(emailItem.date_created)
+    const formatDateForDisplay = (emailDate) => {
+        const headerDateUnix = Date.parse(emailDate)
         const headerDate = new Date(headerDateUnix)
         return headerDate.toLocaleDateString("en-GB")
     }
     const emailItems = props.allEmailSnippets;
     const emailCardsArray = emailItems.map((emailItem) =>
-        <EmailCard name={emailItem.name} date_created={dateConvert(emailItem)}
+        <EmailCard name={emailItem.name} date_created={formatDateForDisplay(emailItem.date_created)}
                    subject={emailItem.subject} body={emailItem.body} read={emailItem.read}/>
     )
     return (

@@ -5,7 +5,6 @@ import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
 import {useEffect, useState} from "react"
 
-
 const App = () => {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
@@ -22,7 +21,7 @@ const App = () => {
     return (
     <div className="App">
         <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
-        <div className="sideBarContainer">
+        <div className="emailCardContainer">
             <SideBar sidebarIsHidden={sidebarIsHidden} />
             <DisplayEmailContainer allEmailSnippets={allEmailSnippets} />
         </div>
