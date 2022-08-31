@@ -1,6 +1,9 @@
 import './App.css';
-import SideBar from './SideBar'
+import DisplayEmailContainer from './DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer';
+import Header from './Header/Header.js'
+import SideBar from './SideBar/SideBar.js'
 import {useState, useEffect} from "react";
+import DisplayReadingPanel from "./ReadingPanel/DisplayReadingPanel";
 
 function App() {
     const [emailSearchId, setEmailSearchId] = useState(98)
@@ -13,7 +16,7 @@ function App() {
         }
         const EmailById = await fetch(queryString)
         const jsonEmailById = await EmailById.json()
-        setEmailDataById(jsonEmailById)
+        setEmailDataById(jsonEmailById.data.email)
     }
     useEffect(() => {
         fetchEmailById()
@@ -21,11 +24,16 @@ function App() {
     useEffect(() => {
         console.log(emailDataById)
     }, [emailDataById])
-  return (
-    <div className="App">
-      <SideBar />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header />
+            <div className={'d-flex flex-row vh-100'}>
+                <SideBar />
+                <DisplayEmailContainer />
+                <DisplayReadingPanel emailDataById={emailDataById}/>
+            </div>
+        </div>
+    )
 }
 
 export default App;
