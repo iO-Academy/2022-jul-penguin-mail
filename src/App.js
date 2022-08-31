@@ -3,6 +3,7 @@ import './App.css';
 import DisplayEmailContainer from "./DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
+import InputBox from "./InputBox/InputBox";
 import {useEffect, useState} from "react"
 
 
@@ -26,6 +27,7 @@ function App() {
         <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
         <div className="sideBarContainer">
             <SideBar sidebarIsHidden={sidebarIsHidden} />
+            <InputBox />
             <DisplayEmailContainer allEmailSnippets={allEmailSnippets} />
         </div>
     </div>
