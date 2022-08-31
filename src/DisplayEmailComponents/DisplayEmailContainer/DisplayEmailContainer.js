@@ -9,10 +9,10 @@ const DisplayEmailContainer = (props) => {
     const emailItems = props.allEmailSnippets;
     const emailCardsArray = emailItems.map((emailItem) =>
         <EmailCard name={emailItem.name} date_created={dateConvert(emailItem)}
-                   subject={emailItem.subject} body={emailItem.body}/>
+                   subject={emailItem.subject} body={emailItem.body} read={emailItem.read}/>
     )
     return (
-        <div className="DisplayEmailContainer col-sm-12 col-md-4 overflow-auto">
+        <div className="DisplayEmailContainer col-sm-12 col-md-4 overflow-auto p-0">
             {emailCardsArray}
         </div>
     )
