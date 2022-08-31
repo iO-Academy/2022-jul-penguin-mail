@@ -3,9 +3,9 @@ import './style.css'
 
 const SideBar = (props) => {
     return (
-
-        <nav className={(props.sidebarIsHidden ? 'd-none' : 'd-block position-fixed position-md-relative') + " d-md-block col-sm-2 col-md-2 col-lg-1 bg-info p-0"}>
-            <InboxButton />
+        <nav
+            className={(props.sidebarIsHidden ? 'd-none' : 'd-block position-fixed position-md-relative') + " sideBarClass d-md-block col-6 col-md-2 col-lg-1 bg-info p-0 vh-100%"}>
+            <InboxButton/>
         </nav>
     )
 }
