@@ -15,11 +15,13 @@ const DisplayEmailContainer = (props) => {
 
     )
     return (
-        <div className="col-sm-12 vh-100% col-md-4 overflow-auto">
+        <div className={(props.readingPanelDisplay  ? 'd-none' : '') + " col-sm-12 vh-100% col-md-4 d-md-block overflow-auto"}>
             {emailCardsArray}
         </div>
     )
 }
 export default DisplayEmailContainer
+
+
 
 
