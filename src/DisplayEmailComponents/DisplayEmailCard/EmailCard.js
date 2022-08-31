@@ -1,20 +1,19 @@
+
 import './DisplayEmailCards.css'
 
-
-function EmailCard() {
+function EmailCard(props) {
 
     return (
-        <div>
-            <div className="displayNameAndDate">
-                <h2 className="contactName">Maria Smith</h2>
-                <p className="receivedEmailDate">23/07/2022</p>
+        <div className={'btn border d-flex flex-row justify-content-between p-2'}>
+            <div className="emailContainer">
+                <p className={'font-weight-bold h5'}>{props.name}</p>
+                <p>{props.subject}</p>
+                <p>{props.body}</p>
             </div>
-           <div className="displaySubjectAndContent">
-               <p className="emailSubject"></p>
-               <p className="emailContent"></p>
-           </div>
+            <div className="dateContainer">
+                <p className={'font-weight-bold'}>{props.date_created}</p>
+            </div>
         </div>
     )
 }
-
 export default EmailCard

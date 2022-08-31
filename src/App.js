@@ -1,4 +1,5 @@
 import './App.css';
+
 import DisplayEmailContainer from './DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer';
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
@@ -6,9 +7,12 @@ import {useState, useEffect} from "react";
 import DisplayReadingPanel from "./ReadingPanel/DisplayReadingPanel";
 
 function App() {
+    const [allEmailSnippets, setAllEmailSnippets] = useState([])
     const [emailSearchId, setEmailSearchId] = useState(98)
     const [emailDataById, setEmailDataById] = useState([])
     const [emailRepliesBoolean, setEmailRepliesBoolean] = useState(false)
+    const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
+
     const fetchEmailById = async () => {
         let queryString = 'http://localhost:8080/emails/' + emailSearchId
         if (emailRepliesBoolean) {
@@ -18,19 +22,29 @@ function App() {
         const jsonEmailById = await EmailById.json()
         setEmailDataById(jsonEmailById.data.email)
     }
+
     useEffect(() => {
         fetchEmailById()
     }, [])
+
+    const fetchAllEmailData = async () => {
+        const EmailData = await fetch('http://localhost:8080/emails')
+        const jsonEmailData = await EmailData.json()
+        setAllEmailSnippets(jsonEmailData.data)
+    }
+
     useEffect(() => {
-        console.log(emailDataById)
-    }, [emailDataById])
+        fetchAllEmailData()
+    }, [])
+
+
     return (
         <div className="App">
-            <Header />
+            <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden}/>
             <div className={'d-flex flex-row vh-100'}>
-                <SideBar />
-                <DisplayEmailContainer />
-                <DisplayReadingPanel emailDataById={emailDataById}/>
+                <SideBar sidebarIsHidden={sidebarIsHidden}/>
+                <DisplayEmailContainer allEmailSnippets={allEmailSnippets}/>
+                <DisplayReadingPanel emailDataById={emailDataById} />
             </div>
         </div>
     )
