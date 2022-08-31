@@ -4,7 +4,7 @@ import DisplayEmailContainer from "./DisplayEmailComponents/DisplayEmailContaine
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
 import {useState, useEffect} from "react";
-import DisplayReadingPanel from "./ReadingPanel/DisplayReadingPanel";
+import DisplayReadingPanel from "./ReadingPanel";
 
 const App = () => {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
