@@ -12,7 +12,7 @@ const DisplayEmailContainer = (props) => {
                    subject={emailItem.subject} body={emailItem.body} read={emailItem.read}/>
     )
     return (
-        <div className="DisplayEmailContainer col-sm-12 col-md-4 overflow-auto p-0">
+        <div className="col-sm-12 vh-100% col-md-4 overflow-auto">
             {emailCardsArray}
         </div>
     )

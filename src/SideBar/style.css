@@ -17,6 +17,11 @@
     background-color: #0275d8;
 }
 
+.sideBarClass {
+    z-index: 1000000000;
+    height: 100%
+}
+
 @media (min-width: 576px) {
     .position-sm-static {
         position: static !important;
