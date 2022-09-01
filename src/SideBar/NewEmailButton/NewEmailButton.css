@@ -1,0 +1,8 @@
+#newEmailButton {
+    font-size: 0.8rem;
+    padding-top: 15px;
+}
+
+#newEmailButton:focus {
+    background-color: #0275d8;
+}
