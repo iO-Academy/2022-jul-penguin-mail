@@ -1,7 +1,7 @@
 const InboxButton = (props) => {
     
     const clickResetView = () => {
-        props.setReadingPanelDisplay(false); 
+        props.setIsReadingPanelOpen(false);
     }
 
     const updateUnreadAmount = () => {

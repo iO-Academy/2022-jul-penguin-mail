@@ -1,6 +1,6 @@
 function EmailCard(props) {
 
-    const checkIfEmailIdIsActive = () => {
+    const getColourClass = () => {
         if(props.emailId == props.readingPanelCurrentEmailId) {
             return 'btn-primary'
         } else if(props.read == true) {
@@ -13,11 +13,11 @@ function EmailCard(props) {
     const handleClick = event => {
         props.setReadingPanelCurrentEmailId(props.emailId)
         props.setIsReadingPanelOpen(true)
-        checkIfEmailIdIsActive()
+        getColourClass()
     }
   
     return (
-        <div className={checkIfEmailIdIsActive() + " btn col-md-12 border-bottom d-flex flex-row justify-content-between p-2"} emailId={props.emailId}
+        <div className={getColourClass() + " btn col-md-12 border-bottom d-flex flex-row justify-content-between p-2"} emailId={props.emailId}
         onClick={handleClick}>
            <div>
                 <p className={'font-weight-bold h5 text-left'}>{props.name}</p>
