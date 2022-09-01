@@ -1,4 +1,5 @@
 const InboxButton = (props) => {
+<<<<<<< HEAD
     
     const clickResetView = () => {
         props.setReadingPanelDisplay(false); 

@@ -1,23 +1,13 @@
-#pageButtons {
-    font-size: 0.8rem;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-#pageButtons:focus {
-    background-color: #0275d8;
-}
-
-#inboxButtons {
+#inboxButton {
     font-size: 0.8rem;
     padding-top: 15px;
 }
 
-#inboxButtons:focus {
+#inboxButton:focus {
     background-color: #0275d8;
 }
 
-.sideBarClass {
+.sideBar {
     z-index: 1000000000;
     height: 100%
 }
