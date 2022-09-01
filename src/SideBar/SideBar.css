@@ -1,0 +1,13 @@
+#inboxButton {
+    font-size: 0.8rem;
+    padding-top: 15px;
+}
+
+#inboxButton:focus {
+    background-color: #0275d8;
+}
+
+.sideBar {
+    z-index: 1000000000;
+    height: 100%
+}
