@@ -7,8 +7,20 @@ import InputBox from "./InputBox/InputBox";
 import {useEffect, useState} from "react"
 
 const App = () => {
+
+    const dummyData =   {
+        "name": "Bob Ross",
+        "email": "bob.ross@paintings.com",
+        "subject": "Example",
+        "body": "Exmaple text",
+    }
+
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
+    const [sendEmailData, setEmailData] = useState()
+
+
+
     const fetchAllEmailData = async () => {
         const emailData = await fetch('http://localhost:8080/emails')
         const jsonEmailData = await emailData.json()

@@ -19,10 +19,12 @@ const InputBox = () => {
     };
 
     const handleSubmit = (event) => {
-        if (message) {
-            setError(error.concat(message));
+        if (error===null) {
+            event.preventDefault();
+            console.log(event.target.to.value)
+            console.log(event.target.subject.value)
+            console.log(event.target.message.value)
         }
-        setMessage('');
         event.preventDefault();
     };
 
@@ -34,7 +36,7 @@ const InputBox = () => {
                         id="formBox"
                         type="email"
                         placeholder="To"
-                        name="To"
+                        name="to"
                         className="col-lg-12 m-4 border"
                         onChange={handleChange}
                         required
@@ -46,7 +48,7 @@ const InputBox = () => {
                         id="formBox"
                         type="text"
                         placeholder="Subject"
-                        name="Subject"
+                        name="subject"
                         className="col-lg-12 m-4 border"
                         required
                     />
