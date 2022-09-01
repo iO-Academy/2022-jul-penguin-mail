@@ -1,6 +1,6 @@
 const CloseButton = (props) => {
     const closeReadingPanel = () => {
-        props.setReadingPanelDisplay(false);
+        props.setIsReadingPanelOpen(false);
     }
     return (
         <div className="d-flex flex-row justify-content-end">

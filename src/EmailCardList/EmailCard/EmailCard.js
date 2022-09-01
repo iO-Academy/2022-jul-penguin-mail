@@ -1,4 +1,3 @@
-
 function EmailCard(props) {
     const handleClick = event => {
         props.setReadingPanelCurrentEmailId(props.emailId)

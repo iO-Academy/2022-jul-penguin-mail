@@ -11,6 +11,7 @@ const App = () => {
     const [readingPanelEmailData, setReadingPanelEmailData] = useState([])
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
     const [isReadingPanelOpen, setIsReadingPanelOpen] = useState(false)
+    const [isActive, setIsActive] = useState(false)
 
     const fetchEmailById = async () => {
         let fetchUrl = 'http://localhost:8080/emails/' + readingPanelCurrentEmailId
@@ -32,6 +33,7 @@ const App = () => {
         setAllEmailSnippets(jsonEmailData.data)
     }
 
+
     useEffect(() => {
         fetchEmailById()
         setEmailAsRead()
@@ -50,7 +52,7 @@ const App = () => {
                          setIsReadingPanelOpen={setIsReadingPanelOpen}/>
                 <EmailCardList allEmailSnippets={allEmailSnippets} setReadingPanelCurrentEmailId={setReadingPanelCurrentEmailId}
                                fetchEmailById={fetchEmailById} isReadingPanelOpen={isReadingPanelOpen}
-                               setIsReadingPanelOpen={setIsReadingPanelOpen}/>
+                               setIsReadingPanelOpen={setIsReadingPanelOpen} setIsActive={setIsActive}/>
                 <ReadingPanel emailData={readingPanelEmailData} isReadingPanelOpen={isReadingPanelOpen}
                               setIsReadingPanelOpen={setIsReadingPanelOpen}/>
             </div>
