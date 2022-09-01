@@ -12,7 +12,7 @@ const EmailCardList = (props) => {
                    subject={emailItem.subject} body={emailItem.body} read={emailItem.read}/>
     )
     return (
-        <div className="col-sm-12 col-md-4 px-0 overflow-auto">
+        <div className="col-sm-12 col-md-4 px-0 overflow-auto border-top border-bottom">
             {emailCardsArray}
         </div>
     )

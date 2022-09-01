@@ -1,5 +1,5 @@
 const InboxButton = (props) => {
-    const unreadEmailCount = props.allEmailSnippets.filter((obj) => obj.read === 1).length;
+    const unreadEmailCount = props.allEmailSnippets.filter((obj) => obj.read == 0).length;
     return (
         <div>
             <button id="inboxButton" type="button" className="btn btn-info w-100 text-left d-flex flex-row justify-content-between">Inbox
