@@ -4,7 +4,7 @@ const EmailCard = (props) => {
             <div className="emailContainer">
                 <p className={'font-weight-bold h5 text-left'}>{props.name}</p>
                 <p className={'text-left'}>{props.subject}</p>
-                <p>{props.body}</p>
+                <p className={'text-left'}>{props.body}</p>
             </div>
             <div className="dateContainer">
                 <p className={'font-weight-bold'}>{props.date_created}</p>
