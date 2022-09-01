@@ -1,35 +1,32 @@
 
 import './App.css';
-import DisplayEmailContainer from "./DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer";
+import EmailCardList from "./EmailCardList/EmailCardList.js";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
 import InputBox from "./InputBox/InputBox";
 import {useEffect, useState} from "react"
 
-
-function App() {
+const App = () => {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
+    const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
     const fetchAllEmailData = async () => {
-        const EmailData = await fetch('http://localhost:8080/emails')
-        const jsonEmailData = await EmailData.json()
-
+        const emailData = await fetch('http://localhost:8080/emails')
+        const jsonEmailData = await emailData.json()
         setAllEmailSnippets(jsonEmailData.data)
-
     }
 
     useEffect(() => {
         fetchAllEmailData()
     }, [])
 
-    const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
     return (
     <div className="App">
         <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
-        <div className="sideBarContainer">
-            <SideBar sidebarIsHidden={sidebarIsHidden} />
+        <main>
             <InputBox />
-            <DisplayEmailContainer allEmailSnippets={allEmailSnippets} />
-        </div>
+            <SideBar sidebarIsHidden={sidebarIsHidden} allEmailSnippets={allEmailSnippets} />
+            <EmailCardList allEmailSnippets={allEmailSnippets} />
+        </main>
     </div>
     )
 }

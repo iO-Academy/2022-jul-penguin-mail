@@ -1,5 +1,5 @@
 import penguinImage from './Assets/surfingPenguin.png'
-import './style.css'
+import './UserInfo.css'
 
 const UserInfo = () => {
     return (
