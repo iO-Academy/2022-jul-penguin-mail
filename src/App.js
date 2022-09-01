@@ -4,6 +4,7 @@ import EmailCardList from "./EmailCardList/EmailCardList.js";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
 import InputBox from "./InputBox/InputBox";
+import SentButton from './SideBar/SentButton/SentButton';
 import {useEffect, useState} from "react"
 
 const App = () => {
