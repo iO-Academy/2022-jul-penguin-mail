@@ -17,7 +17,7 @@ const App = () => {
 
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
-    const [sendEmailData, setEmailData] = useState()
+    const [isNewEmailHidden, setIsNewEmailHidden] = useState(true)
 
 
 
@@ -35,8 +35,8 @@ const App = () => {
     <div className="App">
         <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
         <main>
-            <InputBox />
-            <SideBar sidebarIsHidden={sidebarIsHidden} allEmailSnippets={allEmailSnippets} />
+            <InputBox isNewEmailHidden={isNewEmailHidden} setIsNewEmailHidden={setIsNewEmailHidden}/>
+            <SideBar sidebarIsHidden={sidebarIsHidden} allEmailSnippets={allEmailSnippets} setIsNewEmailHidden={setIsNewEmailHidden} isNewEmailHidden={isNewEmailHidden}/>
             <EmailCardList allEmailSnippets={allEmailSnippets} />
         </main>
     </div>

@@ -1,9 +1,12 @@
 import './NewEmailButton.css'
 
-const NewEmailButton = () => {
+const NewEmailButton = (props) => {
+    const toggleInput = () => {
+        props.setIsNewEmailHidden(!props.isNewEmailHidden)
+    }
     return (
         <div>
-            <button id="newEmailButton" type="button" href="#" class="btn btn-info w-100 text-left btn-primary:success" >New Email</button>
+            <button onClick={toggleInput} id="newEmailButton" type="button" href="#" class="btn btn-info w-100 text-left btn-primary:success" >New Email</button>
         </div>
     )
 }

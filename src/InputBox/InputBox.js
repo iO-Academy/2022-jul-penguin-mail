@@ -1,7 +1,7 @@
 import "./InputBox.css"
 import {useState} from "react";
 
-const InputBox = () => {
+const InputBox = (props) => {
     const [message, setMessage] = useState('');
     const [error, setError] = useState(null);
 
@@ -46,7 +46,7 @@ const InputBox = () => {
     }
 
     return (
-        <card id="inputBox" class="col-lg-6 offset-lg-1 col-md-7 offset-md-2 col-sm-12 col-xs-12 border container bg-white p-4 pr-5">
+        <card id="inputBox" className={(props.isNewEmailHidden ? 'd-none' : "d-block" ) + " col-lg-6 offset-lg-1 col-md-7 offset-md-2 col-sm-12 col-xs-12 border container bg-white p-4 pr-5"} >
             <form onSubmit={handleSubmit}>
                 <div>
                     <input
