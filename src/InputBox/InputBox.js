@@ -15,7 +15,6 @@ const InputBox = () => {
         } else {
             setError(null);
         }
-
         setMessage(event.target.value);
     };
 
@@ -26,7 +25,6 @@ const InputBox = () => {
         setMessage('');
         event.preventDefault();
     };
-
 
     return (
         <card id="inputBox" class="col-lg-6 border container bg-white p-4 pr-5">
@@ -53,7 +51,7 @@ const InputBox = () => {
                         required
                     />
                 </div>
-                <div>
+            <div>
         <textarea
             id="formBox"
             placeholder="Your message"
