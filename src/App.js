@@ -3,8 +3,9 @@ import './App.css';
 import EmailCardList from "./EmailCardList/EmailCardList.js";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
-import {useState, useEffect} from "react";
 import DisplayReadingPanel from "./ReadingPanel";
+import {useState, useEffect} from "react";
+
 
 const App = () => {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
@@ -51,7 +52,7 @@ const App = () => {
             <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden}/>
             <div className={'d-flex flex-row vh-100'}>
                 <SideBar allEmailSnippets={allEmailSnippets} sidebarIsHidden={sidebarIsHidden} setReadingPanelDisplay={setReadingPanelDisplay}/>
-                <DisplayEmailContainer allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId} fetchEmailById={fetchEmailById} readingPanelDisplay={readingPanelDisplay} setReadingPanelDisplay={setReadingPanelDisplay}/>
+                <EmailCardList allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId} fetchEmailById={fetchEmailById} readingPanelDisplay={readingPanelDisplay} setReadingPanelDisplay={setReadingPanelDisplay}/>
                 <DisplayReadingPanel emailDataById={emailDataById} readingPanelDisplay={readingPanelDisplay} />
             </div>
         </div>

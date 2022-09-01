@@ -1,7 +1,6 @@
 
 import './DisplayEmailContainer.css'
-import EmailCard from "../DisplayEmailCard/EmailCard";
-
+import EmailCard from './EmailCard/EmailCard'
 
 const EmailCardList = (props) => {
     const formatDateForDisplay = (emailDate) => {
