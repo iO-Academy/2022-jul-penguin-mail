@@ -21,12 +21,12 @@ const InputBox = () => {
     const handleSubmit = (event) => {
         if (error===null) {
             event.preventDefault();
-            console.log(event.target.to.value)
-            console.log(event.target.subject.value)
-            console.log(event.target.message.value)
             sendEmailToAPI('Josh', event.target.to.value, event.target.subject.value, event.target.message.value)
+            event.target.reset()
+        } else {
+            event.preventDefault();
+            alert('YOUR EMAIL DIDNT SEND!')
         }
-        event.preventDefault();
     };
 
     const sendEmailToAPI = async (name, email, subject, body) => {
@@ -43,8 +43,6 @@ const InputBox = () => {
         const response = await fetch('http://localhost:8080/emails', requestEmailContent)
         const data = await response.json()
         console.log(data)
-        console.log('banana')
-        // this.setState({ postId: data.id })
     }
 
     return (
@@ -85,7 +83,7 @@ const InputBox = () => {
                     <button type="submit" className="btn btn-success float-right ml-1">
                         Send
                     </button>
-                    <button type="submit" className="btn btn-secondary float-right">
+                    <button className="btn btn-secondary float-right">
                         Cancel
                     </button>
                 </div>
