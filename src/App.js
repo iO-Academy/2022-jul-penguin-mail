@@ -7,27 +7,36 @@ import {useState, useEffect} from "react";
 
 const App = () => {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
-    const [emailSearchId, setEmailSearchId] = useState([])
+    const [readingPanelCurrentEmailId, setReadingPanelCurrentEmailId] = useState([])
     const [readingPanelEmailData, setReadingPanelEmailData] = useState([])
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
     const [isReadingPanelOpen, setIsReadingPanelOpen] = useState(false)
 
     const fetchEmailById = async () => {
-        let fetchUrl = 'http://localhost:8080/emails/' + emailSearchId
+        let fetchUrl = 'http://localhost:8080/emails/' + readingPanelCurrentEmailId
         const emailData = await fetch(fetchUrl)
         const jsonEmailData = await emailData.json()
         setReadingPanelEmailData(jsonEmailData.data.email)
     }
 
-    useEffect(() => {
-        fetchEmailById()
-    }, [emailSearchId])
+    const setEmailAsRead = async () => {
+        const requestOptions = {
+            method: 'PUT'
+        }
+        await fetch('http://localhost:8080/emails/' + readingPanelCurrentEmailId, requestOptions)
+    }
 
     const fetchAllEmailData = async () => {
         const emailData = await fetch('http://localhost:8080/emails')
         const jsonEmailData = await emailData.json()
         setAllEmailSnippets(jsonEmailData.data)
     }
+
+    useEffect(() => {
+        fetchEmailById()
+        setEmailAsRead()
+        fetchAllEmailData()
+    }, [readingPanelCurrentEmailId])
 
     useEffect(() => {
         fetchAllEmailData()
@@ -38,12 +47,12 @@ const App = () => {
             <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden}/>
             <div className={'d-flex flex-row vh-100'}>
                 <SideBar allEmailSnippets={allEmailSnippets} sidebarIsHidden={sidebarIsHidden}
-                         setReadingPanelDisplay={setIsReadingPanelOpen}/>
-                <EmailCardList allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId}
-                               fetchEmailById={fetchEmailById} readingPanelDisplay={isReadingPanelOpen}
-                               setReadingPanelDisplay={setIsReadingPanelOpen}/>
-                <ReadingPanel emailDataById={readingPanelEmailData} readingPanelDisplay={isReadingPanelOpen}
-                              setReadingPanelDisplay={setIsReadingPanelOpen}/>
+                         setIsReadingPanelOpen={setIsReadingPanelOpen}/>
+                <EmailCardList allEmailSnippets={allEmailSnippets} setReadingPanelCurrentEmailId={setReadingPanelCurrentEmailId}
+                               fetchEmailById={fetchEmailById} isReadingPanelOpen={isReadingPanelOpen}
+                               setIsReadingPanelOpen={setIsReadingPanelOpen}/>
+                <ReadingPanel emailData={readingPanelEmailData} isReadingPanelOpen={isReadingPanelOpen}
+                              setIsReadingPanelOpen={setIsReadingPanelOpen}/>
             </div>
         </main>
     )

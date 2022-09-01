@@ -6,7 +6,7 @@ const CloseButton = (props) => {
         <div className="d-flex flex-row justify-content-end">
             <button onClick={closeReadingPanel} id="closeButton" type="button"
                     className="btn btn-secondary mt-2 d-md-none">
-                X Close
+                Close
             </button>
         </div>
     )

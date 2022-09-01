@@ -9,11 +9,11 @@ const EmailCardList = (props) => {
     const emailItems = props.allEmailSnippets;
     const emailCardsArray = emailItems.map((emailItem) => 
         <EmailCard emailId={emailItem.id} name={emailItem.name} date_created={formatDateForDisplay(emailItem.date_created)}
-                   subject={emailItem.subject} body={emailItem.body} read={emailItem.read} setEmailSearchId={props.setEmailSearchId} fetchEmailById={props.fetchEmailById} setReadingPanelDisplay={props.setReadingPanelDisplay}/>
+                   subject={emailItem.subject} body={emailItem.body} read={emailItem.read} setReadingPanelCurrentEmailId={props.setReadingPanelCurrentEmailId} fetchEmailById={props.fetchEmailById} setIsReadingPanelOpen={props.setIsReadingPanelOpen}/>
 
     )
     return (
-        <div className={(props.readingPanelDisplay  ? 'd-none' : '') + " col-sm-12 vh-100 col-md-4 d-md-block px-0 overflow-auto border-top border-bottom"}>
+        <div className={(props.isReadingPanelOpen  ? 'd-none' : '') + " col-sm-12 vh-100 col-md-4 d-md-block px-0 overflow-auto border-top border-bottom"}>
             {emailCardsArray}
         </div>
     )

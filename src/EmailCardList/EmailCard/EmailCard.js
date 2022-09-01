@@ -1,8 +1,8 @@
 
 function EmailCard(props) {
     const handleClick = event => {
-        props.setEmailSearchId(props.emailId)
-        props.setReadingPanelDisplay(true)
+        props.setReadingPanelCurrentEmailId(props.emailId)
+        props.setIsReadingPanelOpen(true)
     }
   
     return (

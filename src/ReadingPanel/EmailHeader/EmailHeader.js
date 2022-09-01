@@ -1,5 +1,5 @@
 const EmailHeader = (props) => {
-    const headerData = props.emailDataById
+    const headerData = props.emailData
     const headerDateUnix = Date.parse(headerData.date_created)
     const headerDate = new Date(headerDateUnix)
     const headerDateHuman = headerDate.toLocaleDateString("en-GB")

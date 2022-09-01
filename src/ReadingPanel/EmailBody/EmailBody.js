@@ -1,5 +1,5 @@
 const EmailBody = (props) => {
-    const emailData = props.emailDataById
+    const emailData = props.emailData
 
     return (
         <div>
