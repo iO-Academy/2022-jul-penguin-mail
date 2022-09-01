@@ -1,0 +1,6 @@
+
+#inputBox {
+    position: fixed;
+    left: 115px;
+    z-index: 10;
+}
