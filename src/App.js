@@ -53,7 +53,7 @@ const App = () => {
             <div className={'d-flex flex-row vh-100'}>
                 <SideBar allEmailSnippets={allEmailSnippets} sidebarIsHidden={sidebarIsHidden} setReadingPanelDisplay={setReadingPanelDisplay}/>
                 <EmailCardList allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId} fetchEmailById={fetchEmailById} readingPanelDisplay={readingPanelDisplay} setReadingPanelDisplay={setReadingPanelDisplay}/>
-                <DisplayReadingPanel emailDataById={emailDataById} readingPanelDisplay={readingPanelDisplay} />
+                <DisplayReadingPanel emailDataById={emailDataById} readingPanelDisplay={readingPanelDisplay} setReadingPanelDisplay={setReadingPanelDisplay} />
             </div>
         </div>
     )
