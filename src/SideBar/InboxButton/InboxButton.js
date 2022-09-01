@@ -3,8 +3,8 @@ const InboxButton = (props) => {
 
     const displayInbox = () => {
         if(props.isInboxButtonClicked === false) {
-            props.setIsInboxButtonClicked = true
-            props.setIsSentButtonClicked = false
+            props.setIsInboxButtonClicked(true)
+            props.setIsSentButtonClicked(false)
         }
     }
 

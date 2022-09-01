@@ -2,8 +2,8 @@ const SentButton = (props) => {
 
     const displaySentEmails = () => {
         if(props.isSentButtonClicked === false) {
-            props.setIsSentButtonClicked = true
-            props.setIsInboxButtonClicked = false
+            props.setIsSentButtonClicked(true)
+            props.setIsInboxButtonClicked(false)
         }
     }
 

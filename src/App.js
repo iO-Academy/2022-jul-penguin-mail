@@ -32,14 +32,12 @@ const App = () => {
     useEffect(() => {
         if(isSentButtonClicked === true){
             fetchAllSentEmails()
-            console.log('sent button clicked')
         }
     },[isSentButtonClicked])
 
     useEffect(() => {
         if(isInboxButtonClicked === true){
             fetchAllEmailData()
-            console.log('inbox button clicked')
         }
     },[isInboxButtonClicked])
 
