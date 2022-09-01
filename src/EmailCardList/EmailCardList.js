@@ -1,5 +1,3 @@
-
-import './DisplayEmailContainer.css'
 import EmailCard from './EmailCard/EmailCard'
 
 const EmailCardList = (props) => {
@@ -15,7 +13,7 @@ const EmailCardList = (props) => {
 
     )
     return (
-        <div className={(props.readingPanelDisplay  ? 'd-none' : '') + " col-sm-12 vh-100% col-md-4 d-md-block overflow-auto"}>
+        <div className={(props.readingPanelDisplay  ? 'd-none' : '') + " col-sm-12 vh-100 col-md-4 d-md-block px-0 overflow-auto border-top border-bottom"}>
             {emailCardsArray}
         </div>
     )

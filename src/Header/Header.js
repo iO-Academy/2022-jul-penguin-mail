@@ -7,7 +7,7 @@ const Header = (props) => {
     return (
         <div className={'headerContainer mw-100 d-flex flex-row justify-content-between px-3 py-3'}>
             <div className={'d-flex flex-row px-3 my-auto'} >
-                <MenuButton allEmailSnippets={props.allEmailSnippets} setSidebarIsHidden={props.setSidebarIsHidden} sidebarIsHidden={props.sidebarIsHidden} />
+                <MenuButton setSidebarIsHidden={props.setSidebarIsHidden} sidebarIsHidden={props.sidebarIsHidden} />
                 <Title />
             </div>
             <UserInfo />
