@@ -18,53 +18,42 @@ const InputBox = () => {
 
         setMessage(event.target.value);
     };
-    // const sendEmail = () => {
-    //     const [message, setValue] = useState('');
-    //     const [list, setList] = useState('');
-    //
-    //     const handleChange = (event) => {
-    //         setValue(event.target.value);
-    //     };
-    //
-    //     const handleSubmit = (event) => {
-    //         if (value) {
-    //             setList(list.concat(value));
-    //         }
-    //
-    //         setValue('');
-    //
-    //         event.preventDefault();
-    //     }
-    //
-    //     };
+
+    const handleSubmit = (event) => {
+        if (message) {
+            setError(error.concat(message));
+        }
+        setMessage('');
+        event.preventDefault();
+    };
 
 
-        return (
-            <card id="inputBox" class="col-lg-6 border container bg-white p-4 pr-5">
-                <form >
-                    <div>
-                        <input
-                            id="formBox"
-                            type="email"
-                            placeholder="To"
-                            name="To"
-                            className="col-lg-12 m-4 border"
-                            onChange={handleChange}
-                            required
-                        />
-                        {error && <p className={"text-center"} style={{color: 'red'}}>{error}</p>}
-                    </div>
-                    <div>
-                        <input
-                            id="formBox"
-                            type="text"
-                            placeholder="Subject"
-                            name="Subject"
-                            className="col-lg-12 m-4 border"
-                            required
-                        />
-                    </div>
-                    <div>
+    return (
+        <card id="inputBox" class="col-lg-6 border container bg-white p-4 pr-5">
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <input
+                        id="formBox"
+                        type="email"
+                        placeholder="To"
+                        name="To"
+                        className="col-lg-12 m-4 border"
+                        onChange={handleChange}
+                        required
+                    />
+                    {error && <p className={"text-center"} style={{color: 'red'}}>{error}</p>}
+                </div>
+                <div>
+                    <input
+                        id="formBox"
+                        type="text"
+                        placeholder="Subject"
+                        name="Subject"
+                        className="col-lg-12 m-4 border"
+                        required
+                    />
+                </div>
+                <div>
         <textarea
             id="formBox"
             placeholder="Your message"
@@ -72,18 +61,18 @@ const InputBox = () => {
             className="col-lg-12 m-4 border"
             required
         />
-                    </div>
-                    <div id="formButton" className="col-lg-12">
-                        <button type="submit" className="btn btn-success float-right ml-1">
-                            Send
-                        </button>
-                        <button type="submit" className="btn btn-secondary float-right">
-                            Cancel
-                        </button>
-                    </div>
-                </form>
-            </card>
-        )
-    }
+                </div>
+                <div id="formButton" className="col-lg-12">
+                    <button type="submit" className="btn btn-success float-right ml-1">
+                        Send
+                    </button>
+                    <button type="submit" className="btn btn-secondary float-right">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </card>
+    )
+}
 
-    export default InputBox
+export default InputBox
