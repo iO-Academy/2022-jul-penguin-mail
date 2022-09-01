@@ -1,13 +1,31 @@
-
 import './App.css';
 import EmailCardList from "./EmailCardList/EmailCardList.js";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
-import {useEffect, useState} from "react"
+import ReadingPanel from "./ReadingPanel/ReadingPanel";
+import {useState, useEffect} from "react";
 
 const App = () => {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
+    const [readingPanelCurrentEmailId, setReadingPanelCurrentEmailId] = useState([])
+    const [readingPanelEmailData, setReadingPanelEmailData] = useState([])
     const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
+    const [isReadingPanelOpen, setIsReadingPanelOpen] = useState(false)
+
+    const fetchEmailById = async () => {
+        let fetchUrl = 'http://localhost:8080/emails/' + readingPanelCurrentEmailId
+        const emailData = await fetch(fetchUrl)
+        const jsonEmailData = await emailData.json()
+        setReadingPanelEmailData(jsonEmailData.data.email)
+    }
+
+    const setEmailAsRead = async () => {
+        const requestOptions = {
+            method: 'PUT'
+        }
+        await fetch('http://localhost:8080/emails/' + readingPanelCurrentEmailId, requestOptions)
+    }
+
     const fetchAllEmailData = async () => {
         const emailData = await fetch('http://localhost:8080/emails')
         const jsonEmailData = await emailData.json()
@@ -15,17 +33,28 @@ const App = () => {
     }
 
     useEffect(() => {
+        fetchEmailById()
+        setEmailAsRead()
+        fetchAllEmailData()
+    }, [readingPanelCurrentEmailId])
+
+    useEffect(() => {
         fetchAllEmailData()
     }, [])
 
     return (
-    <div className="App">
-        <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden} />
-        <main>
-            <SideBar sidebarIsHidden={sidebarIsHidden} allEmailSnippets={allEmailSnippets} />
-            <EmailCardList allEmailSnippets={allEmailSnippets} />
+        <main className="App">
+            <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden}/>
+            <div className={'d-flex flex-row vh-100'}>
+                <SideBar allEmailSnippets={allEmailSnippets} sidebarIsHidden={sidebarIsHidden}
+                         setIsReadingPanelOpen={setIsReadingPanelOpen}/>
+                <EmailCardList allEmailSnippets={allEmailSnippets} setReadingPanelCurrentEmailId={setReadingPanelCurrentEmailId}
+                               fetchEmailById={fetchEmailById} isReadingPanelOpen={isReadingPanelOpen}
+                               setIsReadingPanelOpen={setIsReadingPanelOpen} readingPanelCurrentEmailId={readingPanelCurrentEmailId}/>
+                <ReadingPanel emailData={readingPanelEmailData} isReadingPanelOpen={isReadingPanelOpen}
+                              setIsReadingPanelOpen={setIsReadingPanelOpen}/>
+            </div>
         </main>
-    </div>
     )
 }
 export default App;
