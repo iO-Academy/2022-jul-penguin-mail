@@ -1,6 +1,6 @@
 const Title = () => {
     return (
-        <div className={''}>
+        <div>
             <h1>Igloo Inbox</h1>
         </div>
     )
