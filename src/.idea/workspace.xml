@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25997ae1-0f70-4f38-94fa-703cccb68f3a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InboxButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SideBar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SideBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/displayEmailSnippet/displayEmailCard/DisplayEmailCard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/displayEmailSnippet/displayEmailCard/DisplayEmailCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/displayEmailSnippet/displayEmailContainer/DisplayEmailContainer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/displayEmailSnippet/displayEmailContainer/DisplayEmailContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2E53x3Oe14jl9wrvcrSE4mhSfXj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/ioacademy/sites/academyServer/html/reactApp/2022-jul-penguin-mail/src",
+    "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25997ae1-0f70-4f38-94fa-703cccb68f3a" name="Changes" comment="" />
+      <created>1661871860523</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661871860523</updated>
+      <workItem from="1661871862074" duration="11306000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
