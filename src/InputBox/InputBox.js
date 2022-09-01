@@ -25,13 +25,13 @@ const InputBox = () => {
                 />
             </div>
             <div>
-        <textarea
-            id="formBox"
-            placeholder="Your message"
-            name="message"
-            className="col-lg-12 m-4 border"
-            required
-        />
+            <textarea
+                id="formBox"
+                placeholder="Your message"
+                name="message"
+                className="col-lg-12 m-4 border"
+                required
+            />
             </div>
             <div id="formButton" className="col-lg-12">
                 <button type="submit" className="btn btn-success float-right ml-1">
