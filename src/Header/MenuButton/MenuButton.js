@@ -1,6 +1,6 @@
 const MenuButton = (props) => {
     const toggleMenu = () => {
-        props.sidebarIsHidden === false ? props.setSidebarIsHidden(true) : props.setSidebarIsHidden(false)
+        props.setSidebarIsHidden(!props.sidebarIsHidden)
     }
     
     return (

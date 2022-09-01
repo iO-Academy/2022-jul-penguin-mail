@@ -2,11 +2,12 @@
 import './DisplayEmailContainer.css'
 import EmailCard from "../DisplayEmailCard/EmailCard";
 
-const DisplayEmailContainer = (props) => {
+
+const EmailCardList = (props) => {
     const formatDateForDisplay = (emailDate) => {
-        const headerDateUnix = Date.parse(emailDate)
-        const headerDate = new Date(headerDateUnix)
-        return headerDate.toLocaleDateString("en-GB")
+        const dateUnixTimestamp = Date.parse(emailDate)
+        const dateObject = new Date(dateUnixTimestamp)
+        return dateObject.toLocaleDateString("en-GB")
     }
     const emailItems = props.allEmailSnippets;
     const emailCardsArray = emailItems.map((emailItem) => 
@@ -20,7 +21,7 @@ const DisplayEmailContainer = (props) => {
         </div>
     )
 }
-export default DisplayEmailContainer
+export default EmailCardList
 
 
 

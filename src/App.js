@@ -1,6 +1,6 @@
 
 import './App.css';
-import DisplayEmailContainer from "./DisplayEmailComponents/DisplayEmailContainer/DisplayEmailContainer";
+import EmailCardList from "./EmailCardList/EmailCardList.js";
 import Header from './Header/Header.js'
 import SideBar from './SideBar/SideBar.js'
 import {useState, useEffect} from "react";

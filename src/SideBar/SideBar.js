@@ -1,5 +1,5 @@
 import InboxButton from './InboxButton/InboxButton'
-import './style.css'
+import './SideBar.css'
 
 const SideBar = (props) => {
     return (
