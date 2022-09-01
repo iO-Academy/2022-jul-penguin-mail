@@ -19,12 +19,31 @@ const InputBox = () => {
     };
 
     const handleSubmit = (event) => {
-        if (message) {
-            setError(error.concat(message));
+        if (error===null) {
+            event.preventDefault();
+            sendEmailToAPI('Cody Mavrick', event.target.to.value, event.target.subject.value, event.target.message.value)
+            event.target.reset()
+        } else {
+            event.preventDefault();
+            alert('YOUR EMAIL DIDNT SEND!')
         }
-        setMessage('');
-        event.preventDefault();
     };
+
+    const sendEmailToAPI = async (name, email, subject, body) => {
+        const requestEmailContent = {
+            method:'POST',
+            headers: {'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: name,
+                email:email,
+                subject:subject,
+                body:body
+            })
+        }
+        const response = await fetch('http://localhost:8080/emails', requestEmailContent)
+        const data = await response.json()
+        console.log(data)
+    }
 
     return (
         <card id="inputBox" class="col-lg-6 offset-lg-1 col-md-7 offset-md-2 col-sm-12 col-xs-12 border container bg-white p-4 pr-5">
@@ -34,7 +53,7 @@ const InputBox = () => {
                         id="formBox"
                         type="email"
                         placeholder="To"
-                        name="To"
+                        name="to"
                         className="col-lg-12 m-4 border"
                         onChange={handleChange}
                         required
@@ -46,7 +65,7 @@ const InputBox = () => {
                         id="formBox"
                         type="text"
                         placeholder="Subject"
-                        name="Subject"
+                        name="subject"
                         className="col-lg-12 m-4 border"
                         required
                     />
@@ -64,7 +83,7 @@ const InputBox = () => {
                     <button type="submit" className="btn btn-success float-right ml-1">
                         Send
                     </button>
-                    <button type="submit" className="btn btn-secondary float-right">
+                    <button className="btn btn-secondary float-right">
                         Cancel
                     </button>
                 </div>
