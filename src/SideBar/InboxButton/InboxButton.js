@@ -1,4 +1,5 @@
 const InboxButton = (props) => {
+
     const unreadEmailCount = props.allEmailSnippets.filter((obj) => obj.read == 0).length;
 
     const displayInbox = () => {

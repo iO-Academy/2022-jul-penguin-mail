@@ -1,4 +1,4 @@
-import EmailCard from "./EmailCard/EmailCard";
+import EmailCard from './EmailCard/EmailCard'
 
 const EmailCardList = (props) => {
     const formatDateForDisplay = (emailDate) => {
@@ -7,16 +7,19 @@ const EmailCardList = (props) => {
         return dateObject.toLocaleDateString("en-GB")
     }
     const emailItems = props.allEmailSnippets;
-    const emailCardsArray = emailItems.map((emailItem) =>
-        <EmailCard name={emailItem.name} date_created={formatDateForDisplay(emailItem.date_created)}
-                   subject={emailItem.subject} body={emailItem.body} read={emailItem.read}/>
+    const emailCardsArray = emailItems.map((emailItem) => 
+        <EmailCard emailId={emailItem.id} name={emailItem.name} date_created={formatDateForDisplay(emailItem.date_created)}
+                   subject={emailItem.subject} body={emailItem.body} read={emailItem.read} setReadingPanelCurrentEmailId={props.setReadingPanelCurrentEmailId}  setIsReadingPanelOpen={props.setIsReadingPanelOpen} readingPanelCurrentEmailId={props.readingPanelCurrentEmailId} />
+
     )
     return (
-        <div className="col-sm-12 col-md-4 px-0 overflow-auto border-top border-bottom">
+        <div className={(props.isReadingPanelOpen  ? 'd-none' : '') + " col-sm-12 vh-100 col-md-4 d-md-block px-0 overflow-auto border-top border-bottom"}>
             {emailCardsArray}
         </div>
     )
 }
 export default EmailCardList
+
+
 
 
