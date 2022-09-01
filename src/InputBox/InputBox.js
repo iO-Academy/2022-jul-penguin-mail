@@ -18,6 +18,10 @@ const InputBox = (props) => {
         setMessage(event.target.value);
     };
 
+    const toggleNewEmail = () => {
+        props.setIsNewEmailHidden(!props.isNewEmailHidden)
+    }
+
     const handleSubmit = (event) => {
         if (error===null) {
             event.preventDefault();
@@ -83,7 +87,7 @@ const InputBox = (props) => {
                     <button type="submit" className="btn btn-success float-right ml-1">
                         Send
                     </button>
-                    <button className="btn btn-secondary float-right">
+                    <button onClick={toggleNewEmail} className="btn btn-secondary float-right">
                         Cancel
                     </button>
                 </div>
