@@ -1,7 +1,6 @@
 
 #inputBox {
     position: fixed;
-    left: 115px;
     z-index: 10;
 }
 
@@ -9,7 +8,5 @@
     #inputBox {
         height: 100%;
         width: 100vw;
-        left: 0;
-        position: fixed;
     }
 }
