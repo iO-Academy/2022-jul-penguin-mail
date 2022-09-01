@@ -1,6 +1,6 @@
-import EmailHeader from "./EmailHeader"
-import EmailBody from "./EmailBody"
-import CloseButton from "./CloseButton"
+import EmailHeader from "./EmailHeader/EmailHeader"
+import EmailBody from "./EmailBody/EmailBody"
+import CloseButton from "./CloseButton/CloseButton"
 
 const ReadingPanel = (props) => {
     return (
