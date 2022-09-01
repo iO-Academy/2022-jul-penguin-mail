@@ -3,7 +3,14 @@
     padding-top: 15px;
 }
 
-#inboxButton:focus {
+#sentButton {
+    font-size: 0.8rem;
+    padding: 15px 0 15px 0;
+}
+
+
+
+#inboxButton:focus, #sentButton:focus {
     background-color: #0275d8;
 }
 
