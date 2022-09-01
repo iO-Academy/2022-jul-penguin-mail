@@ -10,6 +10,4 @@ const SideBar = (props) => {
     )
 }
 
-//hey
-
 export default SideBar
