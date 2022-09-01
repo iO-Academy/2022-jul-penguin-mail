@@ -1,9 +1,9 @@
-#inboxButtons {
+#inboxButton {
     font-size: 0.8rem;
     padding-top: 15px;
 }
 
-#inboxButtons:focus {
+#inboxButton:focus {
     background-color: #0275d8;
 }
 
