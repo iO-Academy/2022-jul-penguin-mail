@@ -21,7 +21,7 @@ const InputBox = () => {
     const handleSubmit = (event) => {
         if (error===null) {
             event.preventDefault();
-            sendEmailToAPI('Josh', event.target.to.value, event.target.subject.value, event.target.message.value)
+            sendEmailToAPI('Cody Mavrick', event.target.to.value, event.target.subject.value, event.target.message.value)
             event.target.reset()
         } else {
             event.preventDefault();
