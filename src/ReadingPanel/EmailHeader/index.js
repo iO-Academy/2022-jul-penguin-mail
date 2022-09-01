@@ -7,11 +7,11 @@ const EmailHeader = (props) => {
     return (
         <div className="emailHeader d-flex row justify-content-between font-weight-bold pt-2">
             <div className="header col-8 d-flex flex-column">
-            <p className="headerName h5 font-weight-bold">{headerData.name}</p>
-            <p className="headerEmailAddress">{headerData.email}</p>
+                <p className="headerName h5 font-weight-bold">{headerData.name}</p>
+                <p className="headerEmailAddress">{headerData.email}</p>
             </div>
             <div className="headerDate col-4 d-flex justify-content-end h6 font-weight-bold">
-            <p>{headerDateHuman}</p>
+                <p>{headerDateHuman}</p>
             </div>
         </div>
     )

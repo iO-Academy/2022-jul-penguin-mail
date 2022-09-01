@@ -1,7 +1,7 @@
-import EmailHeader from "./EmailHeader";
-import EmailBody from "./EmailBody";
+import EmailHeader from "./EmailHeader"
+import EmailBody from "./EmailBody"
 import './style.css'
-import CloseButton from "./CloseButton";
+import CloseButton from "./CloseButton"
 
 const DisplayReadingPanel = (props) => {
     return (
@@ -14,5 +14,3 @@ const DisplayReadingPanel = (props) => {
 }
 
 export default DisplayReadingPanel
-
-

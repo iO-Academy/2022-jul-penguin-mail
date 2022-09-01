@@ -1,4 +1,3 @@
-
 import './App.css';
 import EmailCardList from "./EmailCardList/EmailCardList.js";
 import Header from './Header/Header.js'
@@ -6,10 +5,8 @@ import SideBar from './SideBar/SideBar.js'
 import DisplayReadingPanel from "./ReadingPanel";
 import {useState, useEffect} from "react";
 
-
 const App = () => {
     const [allEmailSnippets, setAllEmailSnippets] = useState([])
-
     const [emailSearchId, setEmailSearchId] = useState(98)
     const [emailDataById, setEmailDataById] = useState([])
     const [emailRepliesBoolean, setEmailRepliesBoolean] = useState(false)
@@ -30,10 +27,9 @@ const App = () => {
         fetchEmailById()
     }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
         fetchEmailById()
-        },[emailSearchId])
-
+    }, [emailSearchId])
 
     const fetchAllEmailData = async () => {
         const emailData = await fetch('http://localhost:8080/emails')
@@ -45,15 +41,17 @@ const App = () => {
         fetchAllEmailData()
     }, [])
 
-
-
     return (
         <div className="App">
             <Header setSidebarIsHidden={setSidebarIsHidden} sidebarIsHidden={sidebarIsHidden}/>
             <div className={'d-flex flex-row vh-100'}>
-                <SideBar allEmailSnippets={allEmailSnippets} sidebarIsHidden={sidebarIsHidden} setReadingPanelDisplay={setReadingPanelDisplay}/>
-                <EmailCardList allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId} fetchEmailById={fetchEmailById} readingPanelDisplay={readingPanelDisplay} setReadingPanelDisplay={setReadingPanelDisplay}/>
-                <DisplayReadingPanel emailDataById={emailDataById} readingPanelDisplay={readingPanelDisplay} setReadingPanelDisplay={setReadingPanelDisplay} />
+                <SideBar allEmailSnippets={allEmailSnippets} sidebarIsHidden={sidebarIsHidden}
+                         setReadingPanelDisplay={setReadingPanelDisplay}/>
+                <EmailCardList allEmailSnippets={allEmailSnippets} setEmailSearchId={setEmailSearchId}
+                               fetchEmailById={fetchEmailById} readingPanelDisplay={readingPanelDisplay}
+                               setReadingPanelDisplay={setReadingPanelDisplay}/>
+                <DisplayReadingPanel emailDataById={emailDataById} readingPanelDisplay={readingPanelDisplay}
+                                     setReadingPanelDisplay={setReadingPanelDisplay}/>
             </div>
         </div>
     )
