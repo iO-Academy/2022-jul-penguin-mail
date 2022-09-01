@@ -24,9 +24,28 @@ const InputBox = () => {
             console.log(event.target.to.value)
             console.log(event.target.subject.value)
             console.log(event.target.message.value)
+            sendEmailToAPI('Josh', event.target.to.value, event.target.subject.value, event.target.message.value)
         }
         event.preventDefault();
     };
+
+    const sendEmailToAPI = async (name, email, subject, body) => {
+        const requestEmailContent = {
+            method:'POST',
+            headers: {'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: name,
+                email:email,
+                subject:subject,
+                body:body
+            })
+        }
+        const response = await fetch('http://localhost:8080/emails', requestEmailContent)
+        const data = await response.json()
+        console.log(data)
+        console.log('banana')
+        // this.setState({ postId: data.id })
+    }
 
     return (
         <card id="inputBox" class="col-lg-6 col-xs-12 border container bg-white p-4 pr-5">
